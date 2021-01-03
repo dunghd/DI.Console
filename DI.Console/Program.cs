@@ -23,7 +23,29 @@
             BL objbl = new BL(_objIBook);
 
             // Calling method of BL from that Dependency
-            objbl.Insert();
+
+            // Read all
+            //var listBooks = objbl.GetAll();
+            //foreach (var item in listBooks)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            // Read all
+
+            // Insert
+            //var newBook = "New book DDH";
+            //objbl.Insert(newBook);
+            // Insert
+
+            // Update
+            objbl.Update("Book F", "New book DDH");
+            // Update
+
+            // Delete
+            objbl.Delete("New book DDH");
+            // Delete
+
+            Console.ReadKey();
         }
     }
 }

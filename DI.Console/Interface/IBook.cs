@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DI.Console.Interface
+﻿namespace DI.Console.Interface
 {
+    using System.Collections.Generic;
+
     public interface IBook
     {
-        string InsertBook();
+        IList<string> GetAll();
+
+        void InsertBook(string book);
+
+        void UpdateBook(string bookId, string newBook);
     }
 }
