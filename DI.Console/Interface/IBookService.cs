@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public interface IBook
+    public interface IBookService
     {
         IList<string> GetAll();
 

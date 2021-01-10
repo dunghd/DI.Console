@@ -1,6 +1,6 @@
 ﻿namespace DI.Console
 {
-    using DI.Console.BAL;
+    using DI.Console.Controllers;
     using DI.Console.Interface;
     using Ninject;
     using System;
@@ -17,32 +17,32 @@
             _kernel.Load(Assembly.GetExecutingAssembly());
 
             // Gets an instance of the specified service
-            IBook _objIBook = _kernel.Get<IBook>();
+            IBookService bookService = _kernel.Get<IBookService>();
 
             // Ninject will inject DL object to BL
-            BL objbl = new BL(_objIBook);
+            BookController bookController = new BookController(bookService);
 
             // Calling method of BL from that Dependency
 
             // Read all
-            //var listBooks = objbl.GetAll();
-            //foreach (var item in listBooks)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            var listBooks = bookController.GetAll();
+            foreach (var item in listBooks)
+            {
+                Console.WriteLine(item);
+            }
             // Read all
 
             // Insert
-            //var newBook = "New book DDH";
-            //objbl.Insert(newBook);
+            var newBook = "New book DDH";
+            bookController.Insert(newBook);
             // Insert
 
             // Update
-            objbl.Update("Book F", "New book DDH");
+            bookController.Update("Book F", "New book DDH");
             // Update
 
             // Delete
-            objbl.Delete("New book DDH");
+            bookController.Delete("New book DDH");
             // Delete
 
             Console.ReadKey();

@@ -1,4 +1,4 @@
-﻿namespace DI.Console.DAL
+﻿namespace DI.Console.Services
 {
     using DI.Console.Interface;
     using System;
@@ -6,7 +6,7 @@
     using System.IO;
     using System.Linq;
 
-    public class DL : IBook
+    public class BookService : IBookService
     {
         private readonly string _textFile = @"C:\Users\dzunh\Source\Repos\DI.Console\DI.Console\DataSource\Books.txt";
 

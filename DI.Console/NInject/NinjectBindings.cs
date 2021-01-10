@@ -1,9 +1,6 @@
-﻿using DI.Console.DAL;
-using DI.Console.Interface;
+﻿using DI.Console.Interface;
+using DI.Console.Services;
 using Ninject.Modules;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DI.Console.NInject
 {
@@ -15,7 +12,7 @@ namespace DI.Console.NInject
 
             // Here We are Binding services to Inject
             // In this we will inject DL using Interface IBook
-            Bind<IBook>().To<DL>();
+            Bind<IBookService>().To<BookService>();
         }
     }
 }
